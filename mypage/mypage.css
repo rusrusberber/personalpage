@@ -1,0 +1,280 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f2f2f2;
+  }
+  
+  h1, h2 {
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+}
+
+  
+  header h1 {
+    font-size: 36px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+  nav a.active {
+    color: #ccc;
+  }
+  
+  /* Main styles */
+  main {
+    margin-top: 80px;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .about img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-text {
+    flex-basis: 50%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about img {
+      margin-right: 0;
+    }
+  
+    .about-text {
+      flex-basis: 100%;
+    }
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label, input, textarea {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #555;
+  }
+  .about {
+    background-color: #f7f7f7;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+  
+  .about img {
+    border-radius: 50%;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+  }
+  
+  .about button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about button:hover {
+    background-color: #666;
+  }
+  .progress {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    background-color: #333;
+    transition: width 0.5s ease;
+  }
+  footer {
+    text-align: center;
+  }
+  #ojt-experience {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  #ojt-experience h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #ojt-experience ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #ojt-experience li {
+    margin-bottom: 30px;
+  }
+  
+  #ojt-experience h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #ojt-experience p {
+    margin: 5px 0;
+  }
+  
+  #ojt-experience ul ul {
+    margin-top: 10px;
+  }
+  
+  #ojt-experience li:last-child {
+    margin-bottom: 0;
+  }
+
+  #contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #contact-form button:hover {
+    background-color: #45a049;
+  }
+  
+  #contact-form input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  #contact-form label {
+    font-weight: bold;
+  }
+  
+  #contact-form input[type=submit]:hover {
+    background-color: #45a049;
+  }

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <header>
+        <h1>RUSSELL MIKE BERNARDO</h1>
+        <nav>
+            <ul>
+                <li><a href="#about"><button>About</button></a></li>
+                <li><a href="#skills"><button>Skills</button></a></li>
+                <li><a href="#ojt-experience"><button>Work</button></a></li>
+                <li><a href="#contact"><button>Contact</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #3e8e41;
+        }
+    
+        button:focus {
+            outline: none;
+        }
+    
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        nav li {
+            margin: 0 10px;
+        }
+    </style>
+    <main>
+        <section id="about">
+            <div class="about">
+              <img src="C:\Users\My Computer\Desktop\Webpage\mypage\img\IMG_8727.jpg" alt="Russell Mike Bernardo">
+              <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hi, my name is Russell Mike Bernardo and I am a MSIT Student.</p>
+                <p>I graduated from Nueva Ecija University of Science and Technology with a bachelor's degree in Information Technology.</p>
+                <p>In my free time, I enjoy Watching tutorials and playing games.</p>
+                <p>On my youth days I want to be a pilot but we don't really have enough money for that, that's why I pursue this field. Right now I want to teach on a university that's why I'm studying MSIT.</p>
+                <p>Thank you for taking the time to learn a little bit about me.</p>
+              </div>
+            </div>
+        </section>
+          
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>
+                  <h3>Python</h3>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 80%;">80%</div>
+                  </div>
+                </li>
+                <br>
+                <li>
+                  <h3>Java</h3>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 70%;">70%</div>
+                  </div>
+                </li>
+                <br>
+                <li>
+                  <h3>HTML/CSS</h3>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 75%;">75%</div>
+                  </div>
+                </li>
+              </ul>
+        </section>
+
+        <section id="ojt-experience">
+            <h2>OJT Experience</h2>
+            <ul>
+              <li>
+                <h3>Nueva Ecija University of Science and Technology</h3>
+                <p><strong>Position:</strong> Programmer</p>
+                <p><strong>OJT Period:</strong> January 2022 - June 2022</p>
+                <p><strong>OJT Description: </strong> Developing and Improving the records of San Isidro Campus Guidance and Counseling Office in Nueva Ecija University of Science and Technology</p>
+              </li>
+            </ul>
+          </section>
+
+        
+        
+          <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required><br>
+          
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br>
+          
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea><br>
+          
+              <button type="submit" onclick="sendEmail()">Send</button>
+            </form>
+          </section>
+          
+          <script>
+            const form = document.querySelector('form');
+          
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const message = document.getElementById('message').value;
+              
+              const messageText = `Thank you for your message, ${name}!\n\nWe have received your message:\n\n${message}\n\nWe will get back to you at ${email} as soon as possible.`;
+              alert(messageText);
+              
+              form.reset();
+            });
+          </script>
+          
+    </main>
+    <footer>
+        <p>&copy; 2023 Russell Mike Bernardo</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+
+        $(function() {
+            $('#contact-form').submit(function(e) {
+            e.preventDefault(); // prevent the form from submitting normally
+            $.ajax({
+                url: 'send.php', // replace with your server-side script to handle form submission
+                type: 'post',
+                data: $('#contact-form').serialize(),
+                success: function() {
+                $('#contact-success').html('Thank you for your message!'); // display success message
+                $('#contact-form')[0].reset(); // clear form
+                }
+            });
+            });
+        });
+
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            // Highlight current section in navbar
+            $(window).scroll(function() {
+                var position = $(this).scrollTop();
+
+                $('section').each(function() {
+                    var target = $(this).offset().top;
+                    var id = $(this).attr('id');
+                    var navLinks = $('nav a');
+
+                    if (position >= target - 300) {
+                        navLinks.removeClass('active');
+                        $('nav a[href="#' + id + '"]').addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
